@@ -1,16 +1,24 @@
 <ActionBar title="Peliculas"></ActionBar>
 
-<FlexboxLayout flexDirection="row-reverse" tkExampleTitle tkToggleNavButton>
+<FlexboxLayout flexDirection="column" tkExampleTitle tkToggleNavButton>
     <RadListView orientation="horizontal" [items]="moviesNowPlaying?.results">
         <ListViewLinearLayout tkListViewLayout scrollDirection="Horizontal">
             <ng-template tkListItemTemplate let-car="item">
                 <StackLayout orientation="horizontal">
-                    <Image style="flex:1" height="35%" row="1" [src]="car?.backdrop_path" stretch="aspectFill"
-                        class="m-r-20">
+                    <Image style="flex:1" height="250" row="1" [src]="car?.backdrop_path" stretch="aspectFill">
                     </Image>
                 </StackLayout>
             </ng-template>
         </ListViewLinearLayout>
     </RadListView>
-
+    <RadListView orientation="horizontal" [items]="moviesPopular?.results">
+        <ListViewLinearLayout tkListViewLayout scrollDirection="Horizontal">
+            <ng-template tkListItemTemplate let-car="item">
+                <StackLayout orientation="horizontal">
+                    <Image style="flex:1" height="250" row="1" [src]="car?.backdrop_path" stretch="aspectFill">
+                    </Image>
+                </StackLayout>
+            </ng-template>
+        </ListViewLinearLayout>
+    </RadListView>
 </FlexboxLayout>
