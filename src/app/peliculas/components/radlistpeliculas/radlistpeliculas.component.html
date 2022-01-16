@@ -1,11 +1,11 @@
 <ActionBar title="Lista"></ActionBar>
 <RadListView orientation="horizontal" [items]="moviesInput">
     <ListViewLinearLayout tkListViewLayout scrollDirection="Horizontal">
-        <ng-template tkListItemTemplate let-car="item">
-            <StackLayout orientation="horizontal">
-                <Image style="flex:1" height="250" row="1" [src]="car?.backdrop_path" stretch="aspectFill">
-                </Image>
-            </StackLayout>
-        </ng-template>
+        <StackLayout orientation="horizontal">
+
+            <ng-template tkListItemTemplate let-car="item">
+                <ns-pelicula-poster [img]="car?.backdrop_path"></ns-pelicula-poster>
+            </ng-template>
+        </StackLayout>
     </ListViewLinearLayout>
 </RadListView>

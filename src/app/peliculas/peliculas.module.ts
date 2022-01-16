@@ -10,6 +10,7 @@ import { PeliculasDetailsComponent } from "./components/peliculas-details/pelicu
 import { PeliculaCardComponent } from "./components/pelicula-card/pelicula-card.component";
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 import { RadlistpeliculasComponent } from './components/radlistpeliculas/radlistpeliculas.component';
+import { PeliculaPosterComponent } from './components/pelicula-poster/pelicula-poster.component';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { RadlistpeliculasComponent } from './components/radlistpeliculas/radlist
     PeliculasDetailsComponent,
     PeliculaCardComponent,
     RadlistpeliculasComponent,
+    PeliculaPosterComponent,
   ],
   schemas: [NO_ERRORS_SCHEMA],
 })
