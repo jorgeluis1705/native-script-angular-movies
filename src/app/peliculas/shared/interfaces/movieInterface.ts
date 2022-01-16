@@ -33,3 +33,16 @@ export interface IPopularMovies {
   total_pages: number;
   total_results: number;
 }
+export interface ITopRatedMovies {
+  page: number;
+  results: Result[];
+  total_pages: number;
+  total_results: number;
+}
+export interface IUpcomingMovies {
+  dates: Dates;
+  page: number;
+  results: Result[];
+  total_pages: number;
+  total_results: number;
+}

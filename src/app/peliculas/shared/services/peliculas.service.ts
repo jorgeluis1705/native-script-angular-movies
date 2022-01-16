@@ -1,4 +1,8 @@
 import {
+  ITopRatedMovies,
+  IUpcomingMovies,
+} from "./../interfaces/movieInterface";
+import {
   IMoviesNowPlaying,
   IPopularMovies,
 } from "../interfaces/movieInterface";
@@ -38,6 +42,40 @@ export class PeliculasService {
   get popularMovies(): Observable<IPopularMovies> {
     return this.http
       .get<IPopularMovies>(`${this.baseURL}/popular`, {
+        params: {
+          ...this.params,
+        },
+      })
+      .pipe(
+        map((res) => ({
+          ...res,
+          results: res.results.map((e) => ({
+            ...e,
+            backdrop_path: `https://image.tmdb.org/t/p/w500${e.poster_path}`,
+          })),
+        }))
+      );
+  }
+  get topRatedMovies(): Observable<ITopRatedMovies> {
+    return this.http
+      .get<ITopRatedMovies>(`${this.baseURL}/top_rated`, {
+        params: {
+          ...this.params,
+        },
+      })
+      .pipe(
+        map((res) => ({
+          ...res,
+          results: res.results.map((e) => ({
+            ...e,
+            backdrop_path: `https://image.tmdb.org/t/p/w500${e.poster_path}`,
+          })),
+        }))
+      );
+  }
+  get upcomingMovies(): Observable<IUpcomingMovies> {
+    return this.http
+      .get<IUpcomingMovies>(`${this.baseURL}/upcoming`, {
         params: {
           ...this.params,
         },
