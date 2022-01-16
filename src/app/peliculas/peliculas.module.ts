@@ -6,6 +6,7 @@ import {
   NativeScriptHttpClientModule,
 } from "@nativescript/angular";
 import { CommonModule } from "@angular/common";
+import { PeliculasDetailsComponent } from "./components/peliculas-details/peliculas-details.component";
 
 @NgModule({
   imports: [
@@ -14,7 +15,7 @@ import { CommonModule } from "@angular/common";
     NativeScriptHttpClientModule,
     PeliculasRoutingModule,
   ],
-  declarations: [PeliculasComponent],
+  declarations: [PeliculasComponent, PeliculasDetailsComponent],
   schemas: [NO_ERRORS_SCHEMA],
 })
 export class PeliculasModule {}
