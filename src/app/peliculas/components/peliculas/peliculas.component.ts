@@ -6,7 +6,12 @@ import { PeliculasService } from "../../shared/services/peliculas.service";
   styleUrls: ["./peliculas.component.css"],
 })
 export class PeliculasComponent implements OnInit {
-  constructor(private peliculasService: PeliculasService) {}
+  constructor(private peliculasService: PeliculasService) {
+    this.peliculasService.moviesNowPlaying().subscribe({
+      next: (e) => console.log(e),
+      error: (err) => console.log(err),
+    });
+  }
 
   ngOnInit(): void {}
 }
