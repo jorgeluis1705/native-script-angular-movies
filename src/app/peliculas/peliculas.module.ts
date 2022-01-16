@@ -7,7 +7,8 @@ import {
 } from "@nativescript/angular";
 import { CommonModule } from "@angular/common";
 import { PeliculasDetailsComponent } from "./components/peliculas-details/peliculas-details.component";
-import { PeliculaCardComponent } from './components/pelicula-card/pelicula-card.component';
+import { PeliculaCardComponent } from "./components/pelicula-card/pelicula-card.component";
+import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 
 @NgModule({
   imports: [
@@ -15,8 +16,13 @@ import { PeliculaCardComponent } from './components/pelicula-card/pelicula-card.
     NativeScriptCommonModule,
     NativeScriptHttpClientModule,
     PeliculasRoutingModule,
+    NativeScriptUIListViewModule,
   ],
-  declarations: [PeliculasComponent, PeliculasDetailsComponent, PeliculaCardComponent],
+  declarations: [
+    PeliculasComponent,
+    PeliculasDetailsComponent,
+    PeliculaCardComponent,
+  ],
   schemas: [NO_ERRORS_SCHEMA],
 })
 export class PeliculasModule {}

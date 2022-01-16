@@ -1,7 +1,16 @@
 <ActionBar title="Peliculas"></ActionBar>
 
-<GridLayout>
-    <label row="1" margin="10 10 0 10" fontWeight="700" class="text-primary" fontSize="18"
-        [text]="'item.title'"></label>
+<FlexboxLayout flexDirection="row-reverse" tkExampleTitle tkToggleNavButton>
+    <RadListView orientation="horizontal" [items]="moviesNowPlaying?.results">
+        <ListViewLinearLayout tkListViewLayout scrollDirection="Horizontal">
+            <ng-template tkListItemTemplate let-car="item">
+                <StackLayout orientation="horizontal">
+                    <Image style="flex:1" height="35%" row="1" [src]="car?.backdrop_path" stretch="aspectFill"
+                        class="m-r-20">
+                    </Image>
+                </StackLayout>
+            </ng-template>
+        </ListViewLinearLayout>
+    </RadListView>
 
-</GridLayout>
+</FlexboxLayout>
