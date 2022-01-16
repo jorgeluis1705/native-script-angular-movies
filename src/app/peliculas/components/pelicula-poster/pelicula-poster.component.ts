@@ -1,12 +1,6 @@
 import { ElementRef, Input, ViewChild } from "@angular/core";
 import { Component, OnInit } from "@angular/core";
-import {
-  EventData,
-  StackLayout,
-  Image,
-  GestureEventData,
-} from "@nativescript/core";
-import { Color } from "@nativescript/core";
+import { Image, GestureEventData } from "@nativescript/core";
 
 @Component({
   selector: "ns-pelicula-poster",
@@ -17,7 +11,7 @@ export class PeliculaPosterComponent implements OnInit {
   @Input("img") imgimput: string = "";
   @ViewChild("img") img: ElementRef<Image>;
   constructor() {}
-  onTap(args: GestureEventData) {
+  onTap() {
     let view: Image = this.img.nativeElement;
 
     // Get reference to object we want to animate with code
