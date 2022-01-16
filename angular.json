@@ -1,0 +1,22 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "ca5320a8-ccb9-4a84-948f-006814f4efa8"
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "peliculas-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app"
+    }
+  },
+  "defaultProject": "peliculas-app"
+}
