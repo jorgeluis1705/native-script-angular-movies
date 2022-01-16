@@ -1,7 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "ca5320a8-ccb9-4a84-948f-006814f4efa8"
+    "analytics": "ca5320a8-ccb9-4a84-948f-006814f4efa8",
+    "defaultCollection": "@nativescript/schematics"
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -15,7 +16,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app"
+      "prefix": "ns"
     }
   },
   "defaultProject": "peliculas-app"
