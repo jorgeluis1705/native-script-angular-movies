@@ -1,4 +1,4 @@
-import { Input, ViewChild } from "@angular/core";
+import { ElementRef, Input, ViewChild } from "@angular/core";
 import { Component, OnInit } from "@angular/core";
 import {
   EventData,
@@ -15,11 +15,10 @@ import { Color } from "@nativescript/core";
 })
 export class PeliculaPosterComponent implements OnInit {
   @Input("img") imgimput: string = "";
+  @ViewChild("img") img: ElementRef<Image>;
   constructor() {}
   onTap(args: GestureEventData) {
-    let page = <StackLayout>args.object;
-
-    let view: Image = <Image>page.getViewById("lblNS");
+    let view: Image = this.img.nativeElement;
 
     // Get reference to object we want to animate with code
     view
