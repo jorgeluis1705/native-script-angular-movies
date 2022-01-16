@@ -9,6 +9,7 @@ import { CommonModule } from "@angular/common";
 import { PeliculasDetailsComponent } from "./components/peliculas-details/peliculas-details.component";
 import { PeliculaCardComponent } from "./components/pelicula-card/pelicula-card.component";
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
+import { RadlistpeliculasComponent } from './components/radlistpeliculas/radlistpeliculas.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
     PeliculasComponent,
     PeliculasDetailsComponent,
     PeliculaCardComponent,
+    RadlistpeliculasComponent,
   ],
   schemas: [NO_ERRORS_SCHEMA],
 })
