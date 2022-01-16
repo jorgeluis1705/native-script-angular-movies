@@ -1,8 +1,11 @@
 <ActionBar title="Peliculas"></ActionBar>
+<ScrollView orientation="vertical">
 
-<FlexboxLayout flexDirection="column" tkExampleTitle tkToggleNavButton>
-    <ns-radlistpeliculas [movies]="moviesNowPlaying?.results"></ns-radlistpeliculas>
-    <ns-radlistpeliculas [movies]="moviesPopular?.results"></ns-radlistpeliculas>
-    <ns-radlistpeliculas [movies]="moviesTopRated?.results"></ns-radlistpeliculas>
-    <ns-radlistpeliculas [movies]="moviesUpcoming?.results"></ns-radlistpeliculas>
-</FlexboxLayout>
+    <FlexboxLayout flexDirection="column" tkExampleTitle tkToggleNavButton>
+        <ns-radlistpeliculas [hg]="400" [movies]="moviesNowPlaying?.results">
+        </ns-radlistpeliculas>
+        <ns-radlistpeliculas [movies]="moviesPopular?.results"></ns-radlistpeliculas>
+        <ns-radlistpeliculas [movies]="moviesTopRated?.results"></ns-radlistpeliculas>
+        <ns-radlistpeliculas [movies]="moviesUpcoming?.results"></ns-radlistpeliculas>
+    </FlexboxLayout>
+</ScrollView>

@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from "@angular/core";
 })
 export class RadlistpeliculasComponent implements OnInit {
   @Input("movies") moviesInput: Result[];
+  @Input("hg") height: number = 250;
   constructor() {}
 
   ngOnInit(): void {}
