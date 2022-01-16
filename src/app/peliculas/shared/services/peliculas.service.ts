@@ -18,7 +18,9 @@ export class PeliculasService {
   moviesNowPlaying(): Observable<IMoviesNowPlaying> {
     return this.http
       .get<IMoviesNowPlaying>(`${this.baseURL}/now_playing`, {
-        params: this.params,
+        params: {
+          ...this.params,
+        },
       })
       .pipe(
         map((res) => ({
