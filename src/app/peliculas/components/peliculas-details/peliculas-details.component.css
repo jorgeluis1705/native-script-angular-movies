@@ -1,0 +1,18 @@
+.title {
+    font-size: 20;
+    font-weight: 'bold'
+}
+
+.subTitle {
+    font-size: 16;
+    opacity: 0.8
+}
+
+.marginContainer {
+
+    margin: 20 20 0 20;
+}
+
+.overview {
+    font-size: 14;
+}

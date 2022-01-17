@@ -2,7 +2,13 @@
     <FlexboxLayout flexDirection="column">
         <StackLayout>
             <Image style="border-radius: 25;" [src]="movie.backdrop_path"></Image>
+            <StackLayout ngClass="marginContainer">
+                <Label ngClass="title" [text]="movie.original_title" textWrap="true"></Label>
+                <Label ngClass="subTitle" [text]="movie.title" textWrap="true"></Label>
+                <Label ngClass="overview" [text]="movie.overview" textWrap="true"></Label>
 
+            </StackLayout>
+            <ActivityIndicator [busy]="!movie"></ActivityIndicator>
         </StackLayout>
 
     </FlexboxLayout>
