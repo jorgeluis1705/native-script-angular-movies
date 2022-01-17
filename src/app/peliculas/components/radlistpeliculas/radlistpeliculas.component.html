@@ -7,7 +7,7 @@
                 <StackLayout orientation="horizontal">
 
                     <ng-template tkListItemTemplate let-car="item">
-                        <ns-pelicula-poster [img]="car?.backdrop_path">
+                        <ns-pelicula-poster (tap)="onTap(car?.id)" [img]="car?.backdrop_path">
                         </ns-pelicula-poster>
                     </ng-template>
                 </StackLayout>
