@@ -6,7 +6,7 @@ import {
 } from "./../../shared/interfaces/movieInterface";
 import { Component, OnInit } from "@angular/core";
 import { PeliculasService } from "../../shared/services/peliculas.service";
-import { forkJoin } from "rxjs";
+import { delay, forkJoin } from "rxjs";
 @Component({
   selector: "ns-peliculas",
   templateUrl: "./peliculas.component.html",
@@ -23,14 +23,16 @@ export class PeliculasComponent implements OnInit {
       this.peliculasService.popularMovies,
       this.peliculasService.topRatedMovies,
       this.peliculasService.upcomingMovies,
-    ]).subscribe({
-      next: (e) => {
-        this.moviesNowPlaying = e[0];
-        this.moviesPopular = e[1];
-        this.moviesTopRated = e[2];
-        this.moviesUpcoming = e[3];
-      },
-    });
+    ])
+      .pipe(delay(1000))
+      .subscribe({
+        next: (e) => {
+          this.moviesNowPlaying = e[0];
+          this.moviesPopular = e[1];
+          this.moviesTopRated = e[2];
+          this.moviesUpcoming = e[3];
+        },
+      });
   }
 
   ngOnInit(): void {}

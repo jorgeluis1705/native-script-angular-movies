@@ -1,9 +1,17 @@
 <ScrollView orientation="vertical">
+    <ng-template [ngIf]="!moviesNowPlaying|| !moviesPopular|| !moviesTopRated || !moviesUpcoming"
+        [ngIfElse]="loggedOut">
+        <ActivityIndicator busy="true" color="red" width="100" height="100"></ActivityIndicator>
 
-    <FlexboxLayout flexDirection="column" tkExampleTitle tkToggleNavButton>
-        <ns-radlistpeliculas [hg]="400" [movies]="moviesNowPlaying?.results"></ns-radlistpeliculas>
-        <ns-radlistpeliculas tl="populares" [movies]="moviesPopular?.results"></ns-radlistpeliculas>
-        <ns-radlistpeliculas tl="Mejor Valoradas" [movies]="moviesTopRated?.results"></ns-radlistpeliculas>
-        <ns-radlistpeliculas tl="Proximamente" [movies]="moviesUpcoming?.results"></ns-radlistpeliculas>
-    </FlexboxLayout>
+    </ng-template>
+
+    <ng-template #loggedOut>
+        <FlexboxLayout flexDirection="column" tkExampleTitle tkToggleNavButton>
+            <ns-radlistpeliculas [hg]="400" [movies]="moviesNowPlaying?.results"></ns-radlistpeliculas>
+            <ns-radlistpeliculas tl="populares" [movies]="moviesPopular?.results"></ns-radlistpeliculas>
+            <ns-radlistpeliculas tl="Mejor Valoradas" [movies]="moviesTopRated?.results"></ns-radlistpeliculas>
+            <ns-radlistpeliculas tl="Proximamente" [movies]="moviesUpcoming?.results"></ns-radlistpeliculas>
+        </FlexboxLayout>
+    </ng-template>
+
 </ScrollView>
