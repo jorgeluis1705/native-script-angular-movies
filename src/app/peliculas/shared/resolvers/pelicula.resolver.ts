@@ -21,7 +21,11 @@ export class PeliculaResolver implements Resolve<Observable<IMovieDetails>> {
     return new Observable<IMovieDetails>((obs) => {
       this.peliculasService.movieDetails(Number(route.params.id)).subscribe({
         next: (res) => {
-          obs.next(res);
+          const auxMovie: IMovieDetails = {
+            ...res,
+            backdrop_path: `https://image.tmdb.org/t/p/w500${res.poster_path}`,
+          };
+          obs.next(auxMovie);
           obs.complete();
         },
         error: (err) => obs.error(err),

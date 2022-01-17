@@ -1,6 +1,9 @@
 <StackLayout>
     <FlexboxLayout>
-        <Label [text]="movie!.original_title" textWrap="true"></Label>
+        <StackLayout>
+            <Image [src]="movie.backdrop_path"></Image>
+
+        </StackLayout>
 
     </FlexboxLayout>
 </StackLayout>
