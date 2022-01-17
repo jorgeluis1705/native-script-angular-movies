@@ -1,4 +1,5 @@
 import {
+  IMovieDetails,
   ITopRatedMovies,
   IUpcomingMovies,
 } from "./../interfaces/movieInterface";
@@ -9,6 +10,7 @@ import {
 import { Injectable } from "@angular/core";
 import { map, Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
+import { observe } from "@nativescript/core/ui/gestures";
 
 @Injectable({
   providedIn: "root",
@@ -89,5 +91,14 @@ export class PeliculasService {
           })),
         }))
       );
+  }
+  movieDetails(id: number): Observable<IMovieDetails> {
+    return this.http
+      .get<IMovieDetails>(`${this.baseURL}/${id}`, {
+        params: {
+          ...this.params,
+        },
+      })
+      .pipe();
   }
 }
