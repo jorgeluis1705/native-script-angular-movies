@@ -1,11 +1,17 @@
-<RadListView [height]="height" orientation="horizontal" [items]="moviesInput">
-    <ListViewLinearLayout tkListViewLayout scrollDirection="Horizontal">
-        <StackLayout orientation="horizontal">
+<Page>
+    <StackLayout>
+        <Label *ngIf="title" [text]="title | uppercase" style="font-size: 36;" textWrap="true"></Label>
 
-            <ng-template tkListItemTemplate let-car="item">
-                <ns-pelicula-poster [img]="car?.backdrop_path">
-                </ns-pelicula-poster>
-            </ng-template>
-        </StackLayout>
-    </ListViewLinearLayout>
-</RadListView>
+        <RadListView [height]="height" orientation="horizontal" [items]="moviesInput">
+            <ListViewLinearLayout tkListViewLayout scrollDirection="Horizontal">
+                <StackLayout orientation="horizontal">
+
+                    <ng-template tkListItemTemplate let-car="item">
+                        <ns-pelicula-poster [img]="car?.backdrop_path">
+                        </ns-pelicula-poster>
+                    </ng-template>
+                </StackLayout>
+            </ListViewLinearLayout>
+        </RadListView>
+    </StackLayout>
+</Page>
