@@ -1,11 +1,11 @@
 <ScrollView orientation="vertical">
     <ng-template [ngIf]="!moviesNowPlaying|| !moviesPopular|| !moviesTopRated || !moviesUpcoming"
-        [ngIfElse]="loggedOut">
+        [ngIfElse]="showMovies">
         <ActivityIndicator busy="true" color="red" width="100" height="100"></ActivityIndicator>
 
     </ng-template>
 
-    <ng-template #loggedOut>
+    <ng-template #showMovies>
         <FlexboxLayout flexDirection="column" tkExampleTitle tkToggleNavButton>
             <ns-radlistpeliculas [hg]="400" [movies]="moviesNowPlaying?.results"></ns-radlistpeliculas>
             <ns-radlistpeliculas tl="populares" [movies]="moviesPopular?.results"></ns-radlistpeliculas>
